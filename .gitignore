@@ -1,0 +1,20 @@
+# Secretos y build
+.env
+.env.local
+.env*.local
+dist/
+.vercel/
+node_modules/
+supabase/.temp/
+.claude/
+.DS_Store
+
+# Material de trabajo que no forma parte del sitio
+PRD_*.md
+PLAN_DE_ACCION_*.md
+www.zara.com.*.md
+escaparte.com.mx.*.md
+Claude copy
+.vercel
+.env*
+!.env.example

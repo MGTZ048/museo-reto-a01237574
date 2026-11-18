@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+dist
+.claude
+.git
+supabase
+PRD_*.md
+PLAN_DE_ACCION_*.md
+www.zara.com.*.md
+escaparte.com.mx.*.md
+Claude copy
+.DS_Store

@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Los Secretos del Arocena · Escape room en el Museo Arocena</title>
+  <meta name="description" content="Escape room por equipos dentro del Museo Arocena, Torreón. 60 minutos, 4 a 6 personas, 5 a 6 acertijos. Reserva tu horario.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Íconos de línea fina (llave, candado, lupa, reloj, grupo) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.7 12.3 20 3m-3 3 3 3m-6 0 2 2"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10.5" width="16" height="10.5" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5M12 14.5v2.5"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-group" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.8-.4 5 1.8 5 4.8"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v16H5.5c-.8 0-1.5-.7-1.5-1.5zM20 5.5c0-.8-.7-1.5-1.5-1.5H13v16h5.5c.8 0 1.5-.7 1.5-1.5z"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8.2 19z"/><path d="M9 9.5c0 2.8 2.7 5.5 5.5 5.5l1-1.4-1.8-1-1 .8c-1-.5-1.8-1.3-2.3-2.3l.8-1-1-1.8z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/></symbol>
+    <symbol id="i-tt" viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5M14 3c.5 2.8 2.4 4.5 5 4.8"/></symbol>
+  </svg>
+
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <!-- 7.1 Menú superior -->
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a href="#top" class="nav__logo">Los Secretos <span>del Arocena</span></a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="menu" class="nav__menu" aria-label="Principal">
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#precios">Precios</a>
+        <a href="#horarios">Horarios</a>
+        <a href="#grupos">Escuelas y empresas</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="#horarios" class="btn btn--gold btn--sm">Reservar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- 7.2 Hero: una sola imagen oscura a pantalla completa (referencia Zara) -->
+    <section class="hero" aria-labelledby="hero-title">
+      <!-- Para usar la foto del museo: guarda assets/hero.webp y descomenta en css/styles.css (.hero__bg) -->
+      <div class="hero__bg" role="img" aria-label="Sala del Museo Arocena en penumbra, iluminada por linternas."></div>
+      <div class="hero__content">
+        <p class="hero__timer" aria-label="60 minutos">60:00</p>
+        <h1 id="hero-title">¿Podrán descubrir el secreto del museo en 60&nbsp;minutos?</h1>
+        <p class="hero__sub">Un escape room por equipos dentro del Museo Arocena. Observa las obras, resuelve los acertijos y descubre lo que la colección esconde.</p>
+        <div class="hero__ctas">
+          <a href="#horarios" class="btn btn--gold">Reservar ahora</a>
+          <a href="#como-funciona" class="btn btn--ghost">¿Cómo funciona?</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7.3 Cómo funciona -->
+    <section id="como-funciona" class="section section--beige">
+      <div class="wrap">
+        <p class="eyebrow">La experiencia</p>
+        <h2>Cómo funciona</h2>
+        <ol class="steps">
+          <li>
+            <svg class="icon"><use href="#i-key"/></svg>
+            <span class="steps__n">01</span>
+            <h3>Reserva tu horario</h3>
+            <p>Elige día y hora para tu equipo de 4 a 6 personas.</p>
+          </li>
+          <li>
+            <svg class="icon"><use href="#i-search"/></svg>
+            <span class="steps__n">02</span>
+            <h3>Resuelvan los acertijos</h3>
+            <p>Recorran las salas y descifren de 5 a 6 pistas escondidas en la colección.</p>
+          </li>
+          <li>
+            <svg class="icon"><use href="#i-lock"/></svg>
+            <span class="steps__n">03</span>
+            <h3>Descubran el secreto</h3>
+            <p>Si lo logran en 60 minutos, se llevan la foto del equipo, y el equipo más rápido gana un premio.</p>
+          </li>
+        </ol>
+        <ul class="facts">
+          <li><svg class="icon icon--sm"><use href="#i-clock"/></svg>60 minutos</li>
+          <li><svg class="icon icon--sm"><use href="#i-group"/></svg>4 a 6 personas</li>
+          <li><svg class="icon icon--sm"><use href="#i-search"/></svg>5 a 6 acertijos</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 7.4 Modalidades y precios -->
+    <section id="precios" class="section">
+      <div class="wrap">
+        <p class="eyebrow">Modalidades</p>
+        <h2>Elige tu experiencia</h2>
+        <div class="cards">
+          <article class="card card--day">
+            <p class="card__tag">De día</p>
+            <p class="card__price">$80 <small>por persona</small></p>
+            <ul>
+              <li>Viernes de 6 a 8 pm</li>
+              <li>Sábado y domingo de 11 am a 1 pm</li>
+            </ul>
+            <p>Para todas las edades. Ideal para familias, amigos y turistas. <strong>Incluye la entrada al museo.</strong></p>
+            <a href="#horarios" class="btn btn--dark">Reservar de día</a>
+          </article>
+          <article class="card card--night">
+            <p class="card__tag">De noche</p>
+            <p class="card__price">$100 <small>por persona</small></p>
+            <ul>
+              <li>Sábado de 8 a 10 pm</li>
+            </ul>
+            <p>El museo con luces bajas, linternas y misterio. Para jóvenes y adultos.</p>
+            <a href="#horarios" class="btn btn--gold">Reservar de noche</a>
+          </article>
+        </div>
+        <p class="note">Por solo $20 más que la entrada normal, vive el museo como nunca.</p>
+      </div>
+    </section>
+
+    <!-- 7.5 Horarios y reserva -->
+    <section id="horarios" class="section section--dark">
+      <div class="wrap">
+        <p class="eyebrow">Próximo fin de semana</p>
+        <h2>Horarios y reserva</h2>
+        <p class="lead">Cada horario tiene cupo para 2 equipos. Elige el tuyo para empezar.</p>
+
+        <div class="booking" id="booking">
+          <ol class="progress" aria-label="Pasos de la reserva">
+            <li class="is-active" data-step-label="1">Horario</li>
+            <li data-step-label="2">Equipo</li>
+            <li data-step-label="3">Datos</li>
+          </ol>
+
+          <div class="alert" id="booking-alert" role="alert" hidden></div>
+
+          <!-- Paso 1 -->
+          <fieldset class="step" data-step="1">
+            <legend class="sr-only">Paso 1: elige un horario</legend>
+            <div class="slots" id="slots"><!-- Se llenan con js/main.js --></div>
+          </fieldset>
+
+          <!-- Paso 2 -->
+          <fieldset class="step" data-step="2" hidden>
+            <legend class="sr-only">Paso 2: tu equipo</legend>
+            <p class="chosen" id="chosen-slot"></p>
+            <label class="field">
+              <span>Nombre del equipo</span>
+              <input type="text" id="team-name" maxlength="40" autocomplete="off" placeholder="Ej. Los Detectives Laguneros">
+              <small class="field__error"></small>
+            </label>
+            <div class="field">
+              <span id="size-label">Número de personas</span>
+              <div class="seg" role="radiogroup" aria-labelledby="size-label">
+                <label><input type="radio" name="team-size" value="4" checked><span>4</span></label>
+                <label><input type="radio" name="team-size" value="5"><span>5</span></label>
+                <label><input type="radio" name="team-size" value="6"><span>6</span></label>
+              </div>
+            </div>
+            <p class="total">Total: <strong id="total">$0</strong> <small id="total-detail"></small></p>
+            <div class="step__nav">
+              <button type="button" class="btn btn--ghost" data-back>Atrás</button>
+              <button type="button" class="btn btn--gold" data-next>Continuar</button>
+            </div>
+          </fieldset>
+
+          <!-- Paso 3 -->
+          <fieldset class="step" data-step="3" hidden>
+            <legend class="sr-only">Paso 3: tus datos</legend>
+            <label class="field">
+              <span>Tu nombre (capitán del equipo)</span>
+              <input type="text" id="cap-name" autocomplete="name">
+              <small class="field__error"></small>
+            </label>
+            <label class="field">
+              <span>Correo</span>
+              <input type="email" id="cap-email" autocomplete="email" inputmode="email">
+              <small class="field__error"></small>
+            </label>
+            <label class="field">
+              <span>Teléfono</span>
+              <input type="tel" id="cap-phone" autocomplete="tel" inputmode="tel" placeholder="10 dígitos">
+              <small class="field__error"></small>
+            </label>
+            <label class="check">
+              <input type="checkbox" id="cap-privacy">
+              <span>Acepto el <a href="#aviso" data-open-privacy>aviso de privacidad</a>.</span>
+            </label>
+            <small class="field__error" id="privacy-error"></small>
+            <p class="total">Total a pagar en el museo: <strong id="total-3">$0</strong></p>
+            <div class="step__nav">
+              <button type="button" class="btn btn--ghost" data-back>Atrás</button>
+              <button type="button" class="btn btn--gold" id="confirm">Confirmar reserva</button>
+            </div>
+          </fieldset>
+
+          <!-- Confirmación -->
+          <div class="confirm" id="confirmation" hidden tabindex="-1">
+            <svg class="icon icon--lg"><use href="#i-key"/></svg>
+            <h3>¡Reserva confirmada!</h3>
+            <p class="confirm__code">Código: <strong id="c-code"></strong></p>
+            <dl>
+              <div><dt>Equipo</dt><dd id="c-team"></dd></div>
+              <div><dt>Fecha</dt><dd id="c-date"></dd></div>
+              <div><dt>Horario</dt><dd id="c-time"></dd></div>
+              <div><dt>Total</dt><dd id="c-total"></dd></div>
+            </dl>
+            <p class="confirm__note">Llega 15 minutos antes. El pago se realiza en el museo.</p>
+            <p class="confirm__mail">Te enviamos la confirmación a <span id="c-email"></span>.</p>
+            <button type="button" class="btn btn--ghost" id="new-booking">Hacer otra reserva</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7.6 ¿Por qué es diferente? -->
+    <section class="section section--beige">
+      <div class="wrap">
+        <p class="eyebrow">Solo en La Laguna</p>
+        <h2>¿Por qué es diferente?</h2>
+        <ul class="why">
+          <li>
+            <svg class="icon"><use href="#i-map"/></svg>
+            <h3>Solo existe aquí</h3>
+            <p>Cada acertijo sale de las obras y de la historia del Arocena y de La Laguna.</p>
+          </li>
+          <li>
+            <svg class="icon"><use href="#i-book"/></svg>
+            <h3>Aprendes jugando</h3>
+            <p>Sin darte cuenta, conoces el museo mejor que en una visita normal.</p>
+          </li>
+          <li>
+            <svg class="icon"><use href="#i-spark"/></svg>
+            <h3>Siempre hay algo nuevo</h3>
+            <p>Ediciones especiales de Día de Muertos y Halloween.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 7.7 Escuelas y eventos privados -->
+    <section id="grupos" class="section">
+      <div class="wrap wrap--narrow">
+        <p class="eyebrow">Grupos</p>
+        <h2>¿Vienes con tu grupo o tu empresa?</h2>
+        <p class="lead">Organizamos experiencias para escuelas, empresas y cumpleaños. Cuéntanos qué necesitas y te enviamos una propuesta.</p>
+
+        <form class="form" id="group-form" novalidate>
+          <label class="field">
+            <span>Tipo de solicitud</span>
+            <select name="tipo" required>
+              <option value="">Elige una opción</option>
+              <option>Escuela</option>
+              <option>Empresa</option>
+              <option>Cumpleaños</option>
+              <option>Otro</option>
+            </select>
+            <small class="field__error"></small>
+          </label>
+          <label class="field">
+            <span>Nombre</span>
+            <input type="text" name="nombre" autocomplete="name" required>
+            <small class="field__error"></small>
+          </label>
+          <label class="field">
+            <span>Institución o empresa</span>
+            <input type="text" name="institucion" autocomplete="organization" required>
+            <small class="field__error"></small>
+          </label>
+          <div class="form__row">
+            <label class="field">
+              <span>Número de personas</span>
+              <input type="number" name="personas" min="4" max="200" inputmode="numeric" required>
+              <small class="field__error"></small>
+            </label>
+            <label class="field">
+              <span>Fecha deseada</span>
+              <input type="date" name="fecha" required>
+              <small class="field__error"></small>
+            </label>
+          </div>
+          <div class="form__row">
+            <label class="field">
+              <span>Correo</span>
+              <input type="email" name="correo" autocomplete="email" required>
+              <small class="field__error"></small>
+            </label>
+            <label class="field">
+              <span>Teléfono</span>
+              <input type="tel" name="telefono" autocomplete="tel" required>
+              <small class="field__error"></small>
+            </label>
+          </div>
+          <label class="check">
+            <input type="checkbox" name="privacidad" required>
+            <span>Acepto el <a href="#aviso" data-open-privacy>aviso de privacidad</a>.</span>
+          </label>
+          <small class="field__error" data-for="privacidad"></small>
+          <button type="submit" class="btn btn--dark btn--block">Enviar solicitud</button>
+          <p class="form__ok" id="group-ok" role="status" hidden>¡Gracias! Te contactaremos en 48 horas.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- 7.8 Preguntas frecuentes -->
+    <section id="preguntas" class="section section--beige">
+      <div class="wrap wrap--narrow">
+        <p class="eyebrow">Dudas</p>
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq">
+          <details>
+            <summary>¿Necesito saber de arte o historia?</summary>
+            <p>No. Todas las pistas están en el museo; solo hay que observar y trabajar en equipo.</p>
+          </details>
+          <details>
+            <summary>¿Qué pasa si no terminamos en 60 minutos?</summary>
+            <p>El guía les revela el secreto al final, así que nadie se va sin saberlo.</p>
+          </details>
+          <details>
+            <summary>¿Se tocan las obras?</summary>
+            <p>No. Los acertijos usan réplicas, tarjetas y cajas; las piezas originales están protegidas.</p>
+          </details>
+          <details>
+            <summary>¿Puedo ir solo o en pareja?</summary>
+            <p>Sí. Te unimos a otro equipo del mismo horario hasta completar entre 4 y 6 personas.</p>
+          </details>
+          <details>
+            <summary>¿Hay edad mínima?</summary>
+            <p>En la modalidad de día pueden participar niños acompañados de un adulto. La modalidad de noche es para mayores de 15 años.</p>
+          </details>
+          <details>
+            <summary>¿Cómo pago?</summary>
+            <p>Reservas en línea y pagas en la taquilla del museo el día de tu visita.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 7.9 Pie de página -->
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div>
+        <p class="nav__logo">Los Secretos <span>del Arocena</span></p>
+        <p class="footer__addr">
+          Museo Arocena<br>
+          <span id="museum-address">Zona Centro, Torreón, Coahuila</span>
+        </p>
+        <a class="btn btn--wa" id="wa-btn" href="#" target="_blank" rel="noopener">
+          <svg class="icon icon--sm"><use href="#i-wa"/></svg> Escríbenos por WhatsApp
+        </a>
+        <ul class="social">
+          <li><a href="#" id="ig" aria-label="Instagram"><svg class="icon"><use href="#i-ig"/></svg></a></li>
+          <li><a href="#" id="fb" aria-label="Facebook"><svg class="icon"><use href="#i-fb"/></svg></a></li>
+          <li><a href="#" id="tt" aria-label="TikTok"><svg class="icon"><use href="#i-tt"/></svg></a></li>
+        </ul>
+      </div>
+      <div class="footer__map">
+        <iframe title="Mapa del Museo Arocena en Torreón"
+          src="https://www.google.com/maps?q=Museo%20Arocena%2C%20Torre%C3%B3n%2C%20Coahuila&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+    <div class="wrap footer__bottom">
+      <a href="#aviso" data-open-privacy>Aviso de privacidad</a>
+      <p>© 2026 Los Secretos del Arocena · Museo Arocena, Torreón, Coahuila.</p>
+    </div>
+  </footer>
+
+  <!-- Botón fijo en celular -->
+  <a href="#horarios" class="sticky-cta btn btn--gold" id="sticky-cta">Reservar ahora</a>
+
+  <!-- Aviso de privacidad -->
+  <dialog id="privacy" class="privacy" aria-labelledby="privacy-title">
+    <h2 id="privacy-title">Aviso de privacidad</h2>
+    <p>Los datos que compartes (nombre, correo y teléfono) se usan únicamente para gestionar tu reserva o solicitud en Los Secretos del Arocena y para enviarte la confirmación. No se comparten con terceros.</p>
+    <p><em>Texto provisional: el Museo Arocena debe proporcionar el aviso de privacidad oficial.</em></p>
+    <form method="dialog"><button class="btn btn--dark">Entendido</button></form>
+  </dialog>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
