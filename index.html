@@ -52,8 +52,12 @@
 
     <!-- 7.2 Hero: una sola imagen oscura a pantalla completa (referencia Zara) -->
     <section class="hero" aria-labelledby="hero-title">
-      <!-- Para usar la foto del museo: guarda assets/hero.webp y descomenta en css/styles.css (.hero__bg) -->
-      <div class="hero__bg" role="img" aria-label="Sala del Museo Arocena en penumbra, iluminada por linternas."></div>
+      <!-- Foto provisional (Unsplash). Para usar una del museo, reemplaza assets/hero.webp y assets/hero-sm.webp -->
+      <picture class="hero__bg">
+        <source media="(max-width: 767px)" srcset="assets/hero-sm.webp">
+        <img src="assets/hero.webp" width="1600" height="1065" fetchpriority="high"
+             alt="Sala de museo en penumbra con pinturas antiguas iluminadas y bancas al centro.">
+      </picture>
       <div class="hero__content">
         <p class="hero__timer" aria-label="60 minutos">60:00</p>
         <h1 id="hero-title">¿Podrán descubrir el secreto del museo en 60&nbsp;minutos?</h1>
@@ -66,8 +70,13 @@
     </section>
 
     <!-- 7.3 Cómo funciona -->
-    <section id="como-funciona" class="section section--beige">
-      <div class="wrap">
+    <section id="como-funciona" class="section section--alt">
+      <div class="wrap split">
+        <figure class="media media--tall">
+          <img src="assets/llaves.webp" width="1200" height="800" loading="lazy"
+               alt="Llaves antiguas de hierro colgadas de una argolla sobre una puerta de madera.">
+        </figure>
+        <div class="split__body">
         <p class="eyebrow">La experiencia</p>
         <h2>Cómo funciona</h2>
         <ol class="steps">
@@ -95,6 +104,7 @@
           <li><svg class="icon icon--sm"><use href="#i-group"/></svg>4 a 6 personas</li>
           <li><svg class="icon icon--sm"><use href="#i-search"/></svg>5 a 6 acertijos</li>
         </ul>
+        </div>
       </div>
     </section>
 
@@ -112,7 +122,7 @@
               <li>Sábado y domingo de 11 am a 1 pm</li>
             </ul>
             <p>Para todas las edades. Ideal para familias, amigos y turistas. <strong>Incluye la entrada al museo.</strong></p>
-            <a href="#horarios" class="btn btn--dark">Reservar de día</a>
+            <a href="#horarios" class="btn btn--ghost">Reservar de día</a>
           </article>
           <article class="card card--night">
             <p class="card__tag">De noche</p>
@@ -129,7 +139,7 @@
     </section>
 
     <!-- 7.5 Horarios y reserva -->
-    <section id="horarios" class="section section--dark">
+    <section id="horarios" class="section section--alt">
       <div class="wrap">
         <p class="eyebrow">Próximo fin de semana</p>
         <h2>Horarios y reserva</h2>
@@ -224,8 +234,12 @@
     </section>
 
     <!-- 7.6 ¿Por qué es diferente? -->
-    <section class="section section--beige">
-      <div class="wrap">
+    <section class="section feature">
+      <figure class="feature__img">
+        <img src="assets/escultura.webp" width="1200" height="800" loading="lazy"
+             alt="Escultura antigua en blanco y negro iluminada sobre un fondo oscuro.">
+      </figure>
+      <div class="wrap feature__body">
         <p class="eyebrow">Solo en La Laguna</p>
         <h2>¿Por qué es diferente?</h2>
         <ul class="why">
@@ -249,8 +263,13 @@
     </section>
 
     <!-- 7.7 Escuelas y eventos privados -->
-    <section id="grupos" class="section">
-      <div class="wrap wrap--narrow">
+    <section id="grupos" class="section section--alt">
+      <div class="wrap split split--reverse">
+        <figure class="media media--tall media--sticky">
+          <img src="assets/sala.webp" width="1200" height="800" loading="lazy"
+               alt="Sala de museo con un gran arco, esculturas clásicas y un ventanal al fondo.">
+        </figure>
+        <div class="split__body">
         <p class="eyebrow">Grupos</p>
         <h2>¿Vienes con tu grupo o tu empresa?</h2>
         <p class="lead">Organizamos experiencias para escuelas, empresas y cumpleaños. Cuéntanos qué necesitas y te enviamos una propuesta.</p>
@@ -306,14 +325,15 @@
             <span>Acepto el <a href="#aviso" data-open-privacy>aviso de privacidad</a>.</span>
           </label>
           <small class="field__error" data-for="privacidad"></small>
-          <button type="submit" class="btn btn--dark btn--block">Enviar solicitud</button>
+          <button type="submit" class="btn btn--gold btn--block">Enviar solicitud</button>
           <p class="form__ok" id="group-ok" role="status" hidden>¡Gracias! Te contactaremos en 48 horas.</p>
         </form>
+        </div>
       </div>
     </section>
 
     <!-- 7.8 Preguntas frecuentes -->
-    <section id="preguntas" class="section section--beige">
+    <section id="preguntas" class="section">
       <div class="wrap wrap--narrow">
         <p class="eyebrow">Dudas</p>
         <h2>Preguntas frecuentes</h2>
@@ -374,6 +394,7 @@
     <div class="wrap footer__bottom">
       <a href="#aviso" data-open-privacy>Aviso de privacidad</a>
       <p>© 2026 Los Secretos del Arocena · Museo Arocena, Torreón, Coahuila.</p>
+      <p class="credits">Fotos: <a href="https://unsplash.com/photos/inside-of-a-grand-museum-exhibiting-paintings-GWL153l-T9I" target="_blank" rel="noopener">Richard Wang</a>, <a href="https://unsplash.com/photos/black-skeleton-keys-C1P4wHhQbjM" target="_blank" rel="noopener">Silas Köhler</a>, <a href="https://unsplash.com/photos/a-black-and-white-photo-of-a-statue-of-jesus-zNCT3BU6NeM" target="_blank" rel="noopener">Giu Vicente</a> y <a href="https://unsplash.com/photos/a-statue-of-a-man-standing-in-front-of-a-window-0PQXroZ5lb8" target="_blank" rel="noopener">Albert Canite</a> en Unsplash.</p>
     </div>
   </footer>
 

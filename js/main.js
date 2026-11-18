@@ -26,6 +26,34 @@ const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const money = n => '$' + n.toLocaleString('es-MX');
 
+/* ---------- Ambiente: menú al hacer scroll y aparición suave de secciones ---------- */
+document.documentElement.classList.add('js');
+
+const nav = $('.nav');
+const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 40);
+onScroll();
+window.addEventListener('scroll', onScroll, { passive: true });
+
+const revealGroups = [
+  '.section .eyebrow', '.section h2', '.section .lead', '.media', '.feature__img',
+  '.steps li', '.facts', '.card', '.note', '.booking', '.why li', '.form', '.faq', '.footer__grid > *',
+];
+const revealIO = 'IntersectionObserver' in window && new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('is-visible');
+    revealIO.unobserve(e.target);
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+$$(revealGroups.join(',')).forEach(el => {
+  // Retraso escalonado entre elementos hermanos (listas, tarjetas)
+  const sibs = [...el.parentElement.children].filter(c => c.matches(revealGroups.join(',')));
+  const i = sibs.indexOf(el);
+  if (i > 0 && el.matches('li, .card, .footer__grid > *')) el.style.setProperty('--d', `${Math.min(i, 4) * 0.12}s`);
+  if (revealIO) { el.classList.add('reveal'); revealIO.observe(el); }
+});
+
 /* ---------- Menú hamburguesa ---------- */
 const toggle = $('.nav__toggle');
 const menu = $('#menu');
